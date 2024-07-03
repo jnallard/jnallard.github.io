@@ -24,13 +24,16 @@ export default function RootLayout({
       <body className={inter.className} style={{ margin: 0 }}>
         <div style={{ display: "flex" }}>
           <div className="sidebar">
-            <Sidebar aria-label="Sidebar with logo branding example" style={{ minHeight: "100vh" }}>
+            <Sidebar aria-label="Sidebar with logo branding example" style={{ minHeight: "100vh" }} className="w-80">
               <Sidebar.Logo href="/" img="/logo.png" imgAlt="CHAOS logo" >
                 Library
               </Sidebar.Logo>
               <Sidebar.Items>
                 <Sidebar.ItemGroup>
                   {AllDocuments.map(metadata => <Sidebar.Collapse label={metadata.title} icon={HiFolder} key={metadata.path} open={pathname === getLibraryPath(metadata)}>
+                    <Sidebar.Item href={`${getLibraryPath(metadata)}#Introduction`} icon={HiDocumentText} key={`${metadata.path}-introduction`}>
+                      Introduction
+                    </Sidebar.Item>
                     {metadata.sections.map(section => <Sidebar.Item href={getLibraryPath(metadata, section)} icon={HiDocumentText} key={`${metadata.path}-${section.title}`}>
                       {section.title}
                     </Sidebar.Item>)}
@@ -40,7 +43,7 @@ export default function RootLayout({
             </Sidebar>
 
           </div>
-          <div style={{ flex: "1 1 0" }}>
+          <div style={{ flex: "1 1 0", maxHeight: "100vh", overflowY: "auto" }}>
             <div style={{ padding: 50 }}>
               {children}
             </div>

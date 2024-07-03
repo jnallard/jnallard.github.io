@@ -16,5 +16,6 @@ export const TestMetadata: DocumentationMetadata = {
   title: "Test",
   description: "This is my test section.",
   lastUpdated: "July 2024",
+  introduction: <>This is my test section</>,
   sections: sections,
 }
