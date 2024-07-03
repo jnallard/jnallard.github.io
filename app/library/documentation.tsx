@@ -23,11 +23,14 @@ interface DocumentationProps {
 export default function Documentation({metadata} : DocumentationProps) {
     return (
         <section>
-            <h1>{metadata.title} - last updated: {metadata.lastUpdated}</h1>
-            {metadata.sections.map(section => <>
+            <div className="header">
+                <h1>{metadata.title}</h1>
+                <small>Updated: {metadata.lastUpdated}</small>
+            </div>
+            {metadata.sections.map(section => <div className="subsection">
                 <h2 id={section.title}>{section.title}</h2>
                 {section.html}
-            </>)}
+            </div>)}
         </section>
     );
 }

@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className} style={{ margin: 0 }}>
         <div style={{ display: "flex" }}>
-          <div>
+          <div className="sidebar">
             <Sidebar aria-label="Sidebar with logo branding example" style={{ minHeight: "100vh" }}>
               <Sidebar.Logo href="/" img="/logo.png" imgAlt="CHAOS logo" >
                 Library
@@ -41,7 +41,7 @@ export default function RootLayout({
 
           </div>
           <div style={{ flex: "1 1 0" }}>
-            <div style={{ padding: 20 }}>
+            <div style={{ padding: 50 }}>
               {children}
             </div>
           </div>
