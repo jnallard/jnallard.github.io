@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 import { Sidebar } from "flowbite-react";
 import { HiFolder, HiDocumentText } from "react-icons/hi";
 import { TestMetadata } from "./library/test/page";
-import { DocumentationMetadata, DocumentationSection } from "./shared/documentation";
+import { DocumentationMetadata, DocumentationSection } from "./library/documentation";
 
 const AllMetadata = [
   TestMetadata
@@ -34,8 +34,8 @@ export default function RootLayout({
               </Sidebar.Logo>
               <Sidebar.Items>
                 <Sidebar.ItemGroup>
-                  {AllMetadata.map(metadata => <Sidebar.Collapse label={metadata.title} icon={HiFolder}>
-                    {metadata.sections.map(section => <Sidebar.Item href={getLibraryPath(metadata, section)} icon={HiDocumentText}>
+                  {AllMetadata.map(metadata => <Sidebar.Collapse label={metadata.title} icon={HiFolder} key={metadata.path}>
+                    {metadata.sections.map(section => <Sidebar.Item href={getLibraryPath(metadata, section)} icon={HiDocumentText} key={`${metadata.path}-${section.title}`}>
                       {section.title}
                     </Sidebar.Item>)}
                   </Sidebar.Collapse>)}

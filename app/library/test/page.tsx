@@ -1,13 +1,13 @@
-import Documentation, { DocumentationMetadata, DocumentationSection } from "@/app/shared/documentation";
+import Documentation, { DocumentationMetadata, DocumentationSection } from "@/app/library/documentation";
 
 const sections: DocumentationSection[] = [
   {
     title: "Math 1",
-    html: <>This is my math section<div style={{minHeight: "200vh"}}></div></>
+    html: <>This is my math section</>
   },
   {
     title: "Math 2",
-    html: <>This is my math section<div style={{minHeight: "200vh"}}></div></>
+    html: <>This is my math section</>
   },
 ]
 
