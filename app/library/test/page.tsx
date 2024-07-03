@@ -14,6 +14,7 @@ const sections: DocumentationSection[] = [
 export const TestMetadata: DocumentationMetadata = {
   path: "test",
   title: "Test",
+  description: "This is my test section.",
   lastUpdated: "July 2024",
   sections: sections,
 }

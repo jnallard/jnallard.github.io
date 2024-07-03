@@ -1,8 +1,13 @@
 import { ReactElement } from "react";
 
+export const getLibraryPath = (metadata: DocumentationMetadata, section?: DocumentationSection) => {
+    return `/library/${metadata.path}#${section?.title ?? ''}`;
+}
+
 export interface DocumentationMetadata {
     path: string,
     title: string,
+    description: string | ReactElement;
     lastUpdated: string,
     sections: DocumentationSection[]
 }
