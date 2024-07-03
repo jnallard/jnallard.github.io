@@ -6,7 +6,17 @@ import "./assets/css/globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 import { Sidebar } from "flowbite-react";
-import { HiArrowSmRight, HiChartPie, HiInbox, HiShoppingBag, HiTable, HiUser, HiViewBoards, HiFolder  } from "react-icons/hi";
+import { HiFolder, HiDocumentText } from "react-icons/hi";
+import { TestMetadata } from "./library/test/page";
+import { DocumentationMetadata, DocumentationSection } from "./shared/documentation";
+
+const AllMetadata = [
+  TestMetadata
+];
+
+const getLibraryPath = (metadata: DocumentationMetadata, section: DocumentationSection) => {
+  return `/library/${metadata.path}#${section.title}`;
+}
 
 export default function RootLayout({
   children,
@@ -19,32 +29,16 @@ export default function RootLayout({
         <div style={{ display: "flex" }}>
           <div>
             <Sidebar aria-label="Sidebar with logo branding example" style={{ minHeight: "100vh" }}>
-              <Sidebar.Logo href="#" img="/logo.png" imgAlt="CHAOS logo" >
+              <Sidebar.Logo href="/" img="/logo.png" imgAlt="CHAOS logo" >
                 Library
               </Sidebar.Logo>
               <Sidebar.Items>
                 <Sidebar.ItemGroup>
-                  <Sidebar.Item href="/library/test" icon={HiChartPie}>
-                    Dashboard
-                  </Sidebar.Item>
-                  <Sidebar.Item href="#" icon={HiViewBoards}>
-                    Kanban
-                  </Sidebar.Item>
-                  <Sidebar.Item href="#" icon={HiFolder}>
-                    Inbox
-                  </Sidebar.Item>
-                  <Sidebar.Item href="#" icon={HiUser}>
-                    Users
-                  </Sidebar.Item>
-                  <Sidebar.Item href="#" icon={HiShoppingBag}>
-                    Products
-                  </Sidebar.Item>
-                  <Sidebar.Item href="#" icon={HiArrowSmRight}>
-                    Sign In
-                  </Sidebar.Item>
-                  <Sidebar.Item href="#" icon={HiTable}>
-                    Sign Up
-                  </Sidebar.Item>
+                  {AllMetadata.map(metadata => <Sidebar.Collapse label={metadata.title} icon={HiFolder}>
+                    {metadata.sections.map(section => <Sidebar.Item href={getLibraryPath(metadata, section)} icon={HiDocumentText}>
+                      {section.title}
+                    </Sidebar.Item>)}
+                  </Sidebar.Collapse>)}
                 </Sidebar.ItemGroup>
               </Sidebar.Items>
             </Sidebar>
