@@ -9,12 +9,16 @@ import { Sidebar } from "flowbite-react";
 import { HiFolder, HiDocumentText } from "react-icons/hi";
 import { getLibraryPath } from "./library/documentation";
 import { AllDocuments } from "./library/all-documents";
+import { usePathname } from 'next/navigation'
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
+  const pathname = usePathname();
+
   return (
     <html lang="en">
       <body className={inter.className} style={{ margin: 0 }}>
@@ -26,7 +30,7 @@ export default function RootLayout({
               </Sidebar.Logo>
               <Sidebar.Items>
                 <Sidebar.ItemGroup>
-                  {AllDocuments.map(metadata => <Sidebar.Collapse label={metadata.title} icon={HiFolder} key={metadata.path}>
+                  {AllDocuments.map(metadata => <Sidebar.Collapse label={metadata.title} icon={HiFolder} key={metadata.path} open={pathname === getLibraryPath(metadata)}>
                     {metadata.sections.map(section => <Sidebar.Item href={getLibraryPath(metadata, section)} icon={HiDocumentText} key={`${metadata.path}-${section.title}`}>
                       {section.title}
                     </Sidebar.Item>)}
