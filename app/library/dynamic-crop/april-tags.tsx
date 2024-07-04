@@ -1,10 +1,20 @@
+"use client";
+
 import Image from 'next/image';
-import cropPic from './images/crop.png'
-import desmosPic from './images/desmos.png'
-import futuramaPic from './images/futurama.png'
-import projectionTypePic from './images/projection_type.png'
+import cropPic from './images/crop.png';
+import desmosPic from './images/desmos.png';
+import futuramaPic from './images/futurama.png';
+import projectionTypePic from './images/projection_type.png';
+
+import hljs from "highlight.js";
+import { useEffect } from "react";
 
 export function AprilTags() {
+    
+    useEffect(() => {
+        hljs.highlightAll();
+    }, []);
+
     return <>
 
         <p>

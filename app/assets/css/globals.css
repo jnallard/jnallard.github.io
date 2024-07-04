@@ -21,6 +21,10 @@ hr {
     margin-bottom: 20px;
 }
 
+pre {
+    margin: 1em;
+}
+
 .header {
     border-bottom: solid 5px #E17038;
     display: flex;

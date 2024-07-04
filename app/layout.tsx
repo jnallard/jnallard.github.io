@@ -12,6 +12,8 @@ import { AllDocuments } from "./library/all-documents";
 import { usePathname } from 'next/navigation'
 import type { CustomFlowbiteTheme } from "flowbite-react";
 
+import "highlight.js/styles/github.css";
+
 const sidebarTheme: CustomFlowbiteTheme = {
   sidebar: {
     root: {inner: "h-full overflow-y-auto overflow-x-hidden rounded bg-chaos-light-green px-3 py-4 dark:bg-gray-800"},
