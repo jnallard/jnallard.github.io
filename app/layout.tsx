@@ -13,6 +13,7 @@ import { usePathname } from 'next/navigation'
 import type { CustomFlowbiteTheme } from "flowbite-react";
 
 import "highlight.js/styles/github.css";
+import { MathJaxContext } from "better-react-mathjax";
 
 const sidebarTheme: CustomFlowbiteTheme = {
   sidebar: {
@@ -54,7 +55,9 @@ export default function RootLayout({
           </div>
           <div style={{ flex: "1 1 0", maxHeight: "100vh", overflowY: "auto" }}>
             <div style={{ padding: 50 }}>
-              {children}
+              <MathJaxContext>
+                {children}
+              </MathJaxContext>
             </div>
           </div>
         </div>

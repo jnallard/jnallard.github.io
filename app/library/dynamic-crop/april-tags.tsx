@@ -5,9 +5,10 @@ import cropPic from './images/crop.png';
 import desmosPic from './images/desmos.png';
 import futuramaPic from './images/futurama.png';
 import projectionTypePic from './images/projection_type.png';
-
+import 'highlight.js/styles/github-dark.css';
 import hljs from "highlight.js";
 import { useEffect } from "react";
+import { MathJax } from 'better-react-mathjax';
 
 export function AprilTags() {
     
@@ -205,12 +206,10 @@ export function AprilTags() {
 			across, we get something pretty amazing.
 		</p>
 
-TODO: figure out math tags
-{`<math display="block">
-	<mi>
-		screen_space_location = FrustumMatrix * ViewMatrix * (ModelMatrix * Vertex)
-	</mi>
-</math>`} <br />
+        <div className='centered-content'>
+            <MathJax>{ `screen_space_location = FrustumMatrix * ViewMatrix * (ModelMatrix * Vertex)` }</MathJax>
+        </div>
+        <br />
 
 		<p>
 			The ModelMatrix was accounted for when we created the april tags.
