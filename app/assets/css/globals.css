@@ -12,6 +12,15 @@ body {
     line-height: 1.65;
 }
 
+p {
+    margin-bottom: 20px;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .header {
     border-bottom: solid 5px #E17038;
     display: flex;
@@ -33,6 +42,9 @@ body {
     font-size: 1.3em;
     font-weight: 500;
     color: #000;
+    border-bottom: solid 2px #E1703888;
+    margin-bottom: 50px;
+    width: fit-content;
 }
 
 .subsection + .subsection {
@@ -43,4 +55,8 @@ body {
 .sidebar {
     color: #000;
     font-size: 0.8em;
+}
+
+.question {
+    font-weight: bold;
 }

@@ -2,12 +2,12 @@ import { DocumentationMetadata, DocumentationSection } from "@/app/library/docum
 
 const sections: DocumentationSection[] = [
   {
-    title: "Math 1",
-    html: <>This is my math section</>
+    title: "Test 1",
+    html: <>This is my test section</>
   },
   {
-    title: "Math 2",
-    html: <>This is my math section</>
+    title: "Test 2",
+    html: <>This is my test section</>
   },
 ]
 
