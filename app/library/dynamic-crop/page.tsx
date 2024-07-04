@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: `${DynamicCropMetadata.title} - CHAOS Library`,
 }
 
-export default function Test() {
+export default function DynamicCrop() {
   return (
     <Documentation metadata={DynamicCropMetadata} />
   );

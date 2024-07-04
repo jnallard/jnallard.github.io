@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: `${SwerveDriveMetadata.title} - CHAOS Library`,
 }
 
-export default function Test() {
+export default function SwerveDrive() {
   return (
     <Documentation metadata={SwerveDriveMetadata} />
   );
