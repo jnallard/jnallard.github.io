@@ -7,11 +7,9 @@ import fmap from '../assets/frc2024.json';
 
 const WIDTH = 600;
 const HEIGHT = 400;
-const ASPECT = WIDTH/HEIGHT;
 const CROP_BUFFER = 0.1;
 
 function makeQuad(length: number) {
-    //const geometry = new THREE.PlaneGeometry( length, length );
     const geometry = new THREE.BoxGeometry( 0.08, length, length );
     const material = new THREE.MeshBasicMaterial( {color: 0x0000ff, side: THREE.DoubleSide} );
     var mesh = new THREE.Mesh( geometry, material );
@@ -36,8 +34,11 @@ export default function CropDemo({plot_roi}: DemoProps) {
     const markerDivRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+    
+        // setup //
         const renderer = new THREE.WebGLRenderer({ alpha: true });
         setRenderer(renderer);
+
         const tags = fmap.fiducials.map(fiducial => {
             var new_tag = makeQuad(fiducial.size/1000.0);
             new_tag.matrix.fromArray(fiducial.transform, 0);
@@ -45,10 +46,7 @@ export default function CropDemo({plot_roi}: DemoProps) {
             new_tag.matrixWorld.fromArray(fiducial.transform, 0);
             new_tag.matrixWorld = new_tag.matrixWorld.transpose();
             return new_tag;
-        })
-    
-        // setup //
-        // const renderer = new THREE.WebGLRenderer({ alpha: true });
+        });
         renderer.setSize(WIDTH, HEIGHT);
     
         let scene = new THREE.Scene();
@@ -75,7 +73,6 @@ export default function CropDemo({plot_roi}: DemoProps) {
         /// geometry ///
         scene.add(...tags);
         
-    
         animate();
     
         function animate() {

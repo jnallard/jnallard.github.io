@@ -260,10 +260,8 @@ export function AprilTags() {
 			So lets give it a shot, and see what we can do when it's all working together.
 		</p>
 
-		{/* <div id="demo-roi" style={{position: "absolute", zIndex: 0, border: "2px solid red", pointerEvents: "none"}}></div> */}
 		<div className='centered-content'>
             <CropDemo plot_roi={true}/>
         </div>
-		<div id="debuginfo"></div>
     </>;
 }
