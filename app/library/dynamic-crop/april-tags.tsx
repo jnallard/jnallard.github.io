@@ -1,14 +1,15 @@
 "use client";
 
+import { MathJax } from 'better-react-mathjax';
+import hljs from "highlight.js";
+import 'highlight.js/styles/github-dark.css';
 import Image from 'next/image';
+import { useEffect } from "react";
+import CropDemo from './components/crop-demo';
 import cropPic from './images/crop.png';
 import desmosPic from './images/desmos.png';
 import futuramaPic from './images/futurama.png';
 import projectionTypePic from './images/projection_type.png';
-import 'highlight.js/styles/github-dark.css';
-import hljs from "highlight.js";
-import { useEffect } from "react";
-import { MathJax } from 'better-react-mathjax';
 
 export function AprilTags() {
     
@@ -235,7 +236,10 @@ export function AprilTags() {
 			Not sure what you're looking at? Try moving the camera around in the interactive demo below.
 		</p>
 
-		<div id="simple-demo" style={{border: "1px solid black", width: 600}}></div>
+		<div className='centered-content'>
+            <CropDemo plot_roi={false}/>
+        </div>
+        
 
 		<hr />
 
@@ -257,7 +261,9 @@ export function AprilTags() {
 		</p>
 
 		{/* <div id="demo-roi" style={{position: "absolute", zIndex: 0, border: "2px solid red", pointerEvents: "none"}}></div> */}
-		<div id="full-demo" style={{border: "1px solid black", width: 600}}></div>
+		<div className='centered-content'>
+            <CropDemo plot_roi={true}/>
+        </div>
 		<div id="debuginfo"></div>
     </>;
 }
