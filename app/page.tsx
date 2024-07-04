@@ -1,6 +1,11 @@
 import { AllDocuments } from './library/all-documents';
 import { Button, Card } from "flowbite-react";
 import { getLibraryPath } from './library/documentation';
+import type { Metadata } from 'next';
+ 
+export const metadata: Metadata = {
+  title: 'CHAOS Library',
+}
 
 export default function Home() {
   return (

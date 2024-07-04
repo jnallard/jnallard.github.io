@@ -10,6 +10,13 @@ import { HiFolder, HiDocumentText } from "react-icons/hi";
 import { getLibraryPath } from "./library/documentation";
 import { AllDocuments } from "./library/all-documents";
 import { usePathname } from 'next/navigation'
+import type { CustomFlowbiteTheme } from "flowbite-react";
+
+const sidebarTheme: CustomFlowbiteTheme = {
+  sidebar: {
+    root: {inner: "h-full overflow-y-auto overflow-x-hidden rounded bg-chaos-light-green px-3 py-4 dark:bg-gray-800"},
+  },
+};
 
 export default function RootLayout({
   children,
@@ -24,7 +31,7 @@ export default function RootLayout({
       <body className={inter.className} style={{ margin: 0 }}>
         <div style={{ display: "flex" }}>
           <div className="sidebar">
-            <Sidebar aria-label="Sidebar with logo branding example" style={{ minHeight: "100vh" }} className="w-80">
+            <Sidebar aria-label="Sidebar with logo branding example" style={{ minHeight: "100vh" }} className="w-80" theme={sidebarTheme.sidebar}>
               <Sidebar.Logo href="/" img="/logo.png" imgAlt="CHAOS logo" >
                 Library
               </Sidebar.Logo>

@@ -57,6 +57,10 @@ hr {
     font-size: 0.8em;
 }
 
+.bg-chaos-light-green {
+    background-color: #cbe0d2;
+}
+
 .question {
     font-weight: bold;
 }
