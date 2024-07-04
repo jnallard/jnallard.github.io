@@ -121,7 +121,7 @@ export function AprilTags() {
 			on a computer screen uses a different frame of reference than a robot driving on the ground.
 		</p>
 		
-		<p style={{textAlign: "center"}}>
+		<p className='centered-content'>
             <Image src={futuramaPic} width={400} height={300} alt="Futurama Image" />
 		</p>
 
@@ -175,7 +175,7 @@ export function AprilTags() {
 			side lengths shrink as the depth increases.
 		</p>
 
-		<p style={{textAlign: "center"}}>
+		<p className='centered-content'>
             <Image src={projectionTypePic} width={800} height={400} alt="Projection Type Image" />
 		</p>
 
@@ -228,7 +228,7 @@ TODO: figure out math tags
 			</span>
 		</p>
 
-		<p style={{textAlign: "center"}}>
+		<p className='centered-content'>
             <Image src={desmosPic} width={800} height={160} alt="Desmos Image" />
 		</p>
 
@@ -249,7 +249,7 @@ TODO: figure out math tags
 			from the MegaTag2 documentation:
 		</p>
 
-		<p  style={{textAlign: "center"}}>
+		<p className='centered-content'>
             <Image src={cropPic} width={800} height={400} alt="Crop Image" />
 		</p>
 

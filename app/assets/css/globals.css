@@ -68,3 +68,8 @@ pre {
 .question {
     font-weight: bold;
 }
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+}
